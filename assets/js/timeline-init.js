@@ -45,4 +45,32 @@ jQuery(window).load(function() {
 		categories: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
 	});
 });
+jQuery(window).load(function() {
+    var $ = jQuery;
+
+    var today = $('#today_date').attr('data-today').split('/');
+    console.log(today[1]);
+    console.log(today[2]);
+    var elem = new Array();
+    $('.timeline_line a').each(function(){
+        var _href = $(this).attr('href').replace('#','').split('/');
+        //var element_date = Date.parse(_href);
+        ///var element_date = new Date(_href[2],_href[1],_href[0]);
+       // console.log('DIA: '+_href[0]+' MES: '+_href[1]+'  ANO: '+_href[2]);
+        var month = _href[1];
+        var year = _href[2];
+        if(month != '10'){
+            var month = _href[1].replace('0','');
+        }
+        if(month == today[1] && year == today[2]){
+            //$(this).trigger('click');
+            //console.log($(this).attr('href'));
+            elem.push($(this).attr('href'));
+            //return false;
+        }
+    })
+    var last = elem[elem.length - 1];
+    $('a[href="'+last+'"]').trigger('click');
+
+})
 

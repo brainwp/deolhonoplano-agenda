@@ -427,6 +427,7 @@ class DONP_Agenda {
 	}
 
 	public static function timeline() {
+		wp_enqueue_script( 'datejs', plugins_url( 'assets/js/date.js', plugin_dir_path( __FILE__ ) ), array( 'jquery' ), '', true );
 		wp_enqueue_script( 'mCustomScrollbar', plugins_url( 'assets/js/jquery.mCustomScrollbar.js', plugin_dir_path( __FILE__ ) ), array( 'jquery' ), '', true );
 		wp_enqueue_script( 'jquery-easing', plugins_url( 'assets/js/jquery.easing.1.3.js', plugin_dir_path( __FILE__ ) ), array( 'jquery' ), '', true );
 		wp_enqueue_script( 'jquery-timeline', plugins_url( 'assets/js/jquery.timeline.min.js', plugin_dir_path( __FILE__ ) ), array( 'jquery' ), '', true );
@@ -482,6 +483,8 @@ class DONP_Agenda {
 			</div>
 		<?php endif; ?>
 		<?php wp_reset_postdata();
+		$today = getdate();
+		echo '<div id="today_date" data-today="'.$today['mday'].'/'.$today['mon'].'/'.$today['year'].'" style="display:none"></div>';
 	}
 
 	public function template_loader( $template ) {
@@ -500,7 +503,6 @@ class DONP_Agenda {
 				$template = plugin_dir_path( dirname( __FILE__ ) ) . '/templates/' . $file;
 			}
 		}
-
 		return $template;
 	}
 }
