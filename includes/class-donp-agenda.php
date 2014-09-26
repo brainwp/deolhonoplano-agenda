@@ -427,7 +427,7 @@ class DONP_Agenda {
 	}
 
 	public static function timeline() {
-		wp_enqueue_script( 'datejs', plugins_url( 'assets/js/date.js', plugin_dir_path( __FILE__ ) ), array( 'jquery' ), '', true );
+		//wp_enqueue_script( 'datejs', plugins_url( 'assets/js/date.js', plugin_dir_path( __FILE__ ) ), array( 'jquery' ), '', true );
 		wp_enqueue_script( 'mCustomScrollbar', plugins_url( 'assets/js/jquery.mCustomScrollbar.js', plugin_dir_path( __FILE__ ) ), array( 'jquery' ), '', true );
 		wp_enqueue_script( 'jquery-easing', plugins_url( 'assets/js/jquery.easing.1.3.js', plugin_dir_path( __FILE__ ) ), array( 'jquery' ), '', true );
 		wp_enqueue_script( 'jquery-timeline', plugins_url( 'assets/js/jquery.timeline.min.js', plugin_dir_path( __FILE__ ) ), array( 'jquery' ), '', true );
