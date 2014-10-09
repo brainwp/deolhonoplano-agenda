@@ -1,4 +1,5 @@
 ## Template do calendario ##
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/brasadesign/deolhonoplano-agenda?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Criar arquivo `archive-agenda.php` no tema.
 
